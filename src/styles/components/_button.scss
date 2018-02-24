@@ -1,0 +1,31 @@
+.big-button{
+    background: $purple;
+    color:#fff;
+    border:none;
+    border-bottom: 0.6rem solid darken($purple, 10%);
+    font-size:$l-size;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:$xl-size;
+    padding:2.4rem;
+    width:100%; 
+}
+
+.big-button:disabled{
+    opacity: 0.5;
+}
+
+.button{
+    background: $purple;
+    color:#fff;
+    border:none;
+    border-bottom: 0.3rem solid darken($purple, 10%);
+    padding: $m-size;
+}
+
+.button__link{
+    background:none;
+    border:none;
+    color:$off-white;
+    padding:0;
+}

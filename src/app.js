@@ -9,6 +9,8 @@ console.log(subtract(15,10));*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainAppRender from './components/MainApp';
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
 
 /*const User = (props) => {
 	return(

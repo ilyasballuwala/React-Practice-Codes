@@ -42,6 +42,9 @@ export default class MainAppRender extends React.Component{
 			};
 		})*/
 	}
+	handleRemoveModal = () => {
+		this.setState(() => ({ selectedOption: undefined }));
+	}
 	removeSingleoption = (option) => {
 		this.setState((prevState) => ({
 			options: prevState.options.filter((opt) => {
@@ -54,7 +57,7 @@ export default class MainAppRender extends React.Component{
         const option = this.state.options[selectedoption]; 		
 		this.setState(() => ({
             selectedOption: option
-        }));
+		}));
 	}
 	handleAddOption = (option) => {
 		console.log(option);
@@ -69,21 +72,22 @@ export default class MainAppRender extends React.Component{
 	render(){
 		//const title="App Title";
 		const subtitle="App Sub Title";
-
 		return(
 		  <div>	
 			<Header subtitle={subtitle} />
-			<Button 
-				hasOption={this.state.options.length > 0} 
-				pickrandom={this.handlePick}
-			/>
-			<Options 
-				options={this.state.options} 
-				removealloption={this.removeAlloption}
-				removeSingleoption={this.removeSingleoption}
-			/>
-			<AddOption handleAddOption={this.handleAddOption} />
-            <OptionModal selectedOption={this.selectedOption} />
+			<div className="container">
+				<Button
+					hasOption={this.state.options.length > 0} 
+					pickrandom={this.handlePick}
+				/>
+				<Options 
+					options={this.state.options} 
+					removealloption={this.removeAlloption}
+					removeSingleoption={this.removeSingleoption}
+				/>
+				<AddOption handleAddOption={this.handleAddOption} />
+				<OptionModal selectedOption={this.state.selectedOption} handleRemoveModal={this.handleRemoveModal} />
+			</div>
 		  </div>		
 		)
 	};
